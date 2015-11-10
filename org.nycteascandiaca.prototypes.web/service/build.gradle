@@ -1,0 +1,6 @@
+dependencies {
+	compile project(':domain')
+	compile project(':business')
+	
+	compile 'org.springframework:spring-web:4.2.2.RELEASE'
+}

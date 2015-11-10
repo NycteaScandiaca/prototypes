@@ -1,9 +1,7 @@
 allprojects {
 	group = 'org.nycteascandiaca.prototypes.web'
 	version = '1.0-SNAPSHOT'
-}
 
-subprojects {
 	apply plugin: 'java'
 	apply plugin: 'eclipse'
 	apply plugin: 'idea'
@@ -28,6 +26,14 @@ subprojects {
 	}
 
 	dependencies {
-    	testCompile "junit:junit:4+"
+    	testCompile 'junit:junit:4+'
  	}
+}
+
+dependencies {
+	compile project(':domain')
+	compile project(':repository')
+	compile project(':business')
+	compile project(':service')
+	compile project(':presentation')
 }
