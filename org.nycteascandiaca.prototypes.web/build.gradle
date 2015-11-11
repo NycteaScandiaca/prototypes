@@ -30,10 +30,25 @@ allprojects {
  	}
 }
 
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.2.7.RELEASE")
+    }
+}
+
+apply plugin: 'spring-boot'
+
 dependencies {
 	compile project(':domain')
 	compile project(':repository')
 	compile project(':business')
 	compile project(':service')
 	compile project(':presentation')
+
+	compile("org.springframework.boot:spring-boot-starter-data-jpa")
+    compile("org.springframework.boot:spring-boot-starter-web")
 }
+

@@ -1,0 +1,23 @@
+apply plugin: 'war'
+apply plugin: 'gwt'
+apply plugin: 'jetty'
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'de.richsource.gradle.plugins:gwt-gradle-plugin:0.6'
+    }
+}
+
+dependencies {
+	compile 'com.google.gwt:gwt-user:2.7.0'
+    compile 'com.google.gwt:gwt-dev:2.7.0'
+}
+
+gwt {
+	modules 'org.nycteascandiaca.prototypes.web.presentation.Application'
+	
+	jettyRunWar.httpPort = 8089
+}

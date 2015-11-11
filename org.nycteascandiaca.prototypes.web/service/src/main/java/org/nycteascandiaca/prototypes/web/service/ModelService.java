@@ -4,21 +4,26 @@ import java.util.List;
 
 import org.nycteascandiaca.prototypes.web.business.ModelManager;
 import org.nycteascandiaca.prototypes.web.domain.Model;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@RequestMapping("/models")
 public class ModelService
 {
+	@Autowired
 	private ModelManager modelManager;
 	
-	@RequestMapping("/models")
+	@RequestMapping
 	public List<Model> getAllModels()
 	{
 		return modelManager.getAllModels();
 	}
 	
-	public Model getModelById(long id)
+	@RequestMapping("/{id}")
+	public Model getModelById(@PathVariable("id") int id)
 	{
 		return modelManager.getModelById(id);
 	}

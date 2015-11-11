@@ -5,12 +5,19 @@ import java.util.List;
 import org.nycteascandiaca.prototypes.web.business.ModelManager;
 import org.nycteascandiaca.prototypes.web.domain.Model;
 import org.nycteascandiaca.prototypes.web.repository.ModelRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 
 public class ModelManagerImpl implements ModelManager
 {
-	private final ModelRepository repository;
+	@Autowired
+	private ModelRepository repository;
 	
-	ModelManagerImpl(ModelRepository repository)
+	public ModelManagerImpl()
+	{
+		
+	}
+	
+	public ModelManagerImpl(ModelRepository repository)
 	{
 		this.repository = repository;
 	}
