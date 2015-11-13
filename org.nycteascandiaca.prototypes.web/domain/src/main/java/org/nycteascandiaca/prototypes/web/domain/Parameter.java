@@ -1,7 +1,7 @@
 package org.nycteascandiaca.prototypes.web.domain;
 
 public class Parameter
-{
+{	
 	private long id;
 	
 	private String name;

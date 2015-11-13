@@ -8,7 +8,7 @@ public class Model
 	
 	private String name;
 	
-	//private List<Parameter> parameters;
+	private List<Parameter> parameters;
 	
 	public Model()
 	{
@@ -35,7 +35,7 @@ public class Model
 		this.name = name;
 	}
 	
-	/*public List<Parameter> getParameters()
+	public List<Parameter> getParameters()
 	{
 		return parameters;
 	}
@@ -43,5 +43,5 @@ public class Model
 	public void setParameters(List<Parameter> parameters)
 	{
 		this.parameters = parameters;
-	}*/
+	}
 }

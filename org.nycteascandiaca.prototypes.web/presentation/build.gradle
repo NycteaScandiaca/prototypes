@@ -1,6 +1,4 @@
-apply plugin: 'war'
 apply plugin: 'gwt'
-apply plugin: 'jetty'
 
 buildscript {
     repositories {
@@ -14,10 +12,12 @@ buildscript {
 dependencies {
 	compile 'com.google.gwt:gwt-user:2.7.0'
     compile 'com.google.gwt:gwt-dev:2.7.0'
+    
+    compile 'org.springframework:spring-web:4.2.2.RELEASE'
 }
 
 gwt {
+	gwtVersion='2.7.0'
+
 	modules 'org.nycteascandiaca.prototypes.web.presentation.Application'
-	
-	jettyRunWar.httpPort = 8089
 }

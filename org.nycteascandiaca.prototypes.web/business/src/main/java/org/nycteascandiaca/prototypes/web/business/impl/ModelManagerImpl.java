@@ -32,6 +32,5 @@ public class ModelManagerImpl implements ModelManager
 	public Model getModelById(long id)
 	{
 		return repository.findOne(id);
-	}
-	
+	}	
 }
