@@ -24,6 +24,9 @@ public class Application
 		scanBeans(context);
 		
 		//createModels(context);
+		
+		//modifyModels(context);
+		
 		scanAllModels(context);
 	}
 	
@@ -57,6 +60,19 @@ public class Application
 			Model model = createModel(i);
 			repository.save(model);
 		}
+	}
+	
+	private static void modifyModels(ApplicationContext context)
+	{
+		System.out.println("[Begin] Modify Models");
+		ModelRepository repository = context.getBean(ModelRepository.class);
+		for (Model model : repository.findAll())
+		{
+			List<Parameter> parameters = model.getParameters();
+			parameters.remove(0);
+			repository.save(model);
+		}
+		System.out.println("[End] Modify Models");
 	}
 	
 	private static Model createModel(int index)

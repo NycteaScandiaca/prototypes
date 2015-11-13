@@ -16,7 +16,7 @@
 			<basic name="name">
 				<column name="NAME" length="100"/>
 			</basic>
-			<one-to-many name="parameters" fetch="EAGER">
+			<one-to-many name="parameters" orphan-removal="true" fetch="EAGER">
 				<join-table name="MODEL_PARAMETERS">
                 	<join-column name="MODEL_ID" referenced-column-name="ID"/>
                 	<inverse-join-column name="PARAMETER_ID" referenced-column-name="ID" unique="true" />
