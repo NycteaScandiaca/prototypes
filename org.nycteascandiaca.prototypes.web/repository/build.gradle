@@ -7,5 +7,4 @@ dependencies {
     compile 'org.hibernate:hibernate-entitymanager:5.0.1.Final'
 
     compile 'mysql:mysql-connector-java:5.1.36'
-	
 }

@@ -1,36 +1,38 @@
-package org.nycteascandiaca.prototypes.web;
+package org.nycteascandiaca.prototypes.web.presentation;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
-import org.nycteascandiaca.prototypes.web.business.ModelManager;
-import org.nycteascandiaca.prototypes.web.domain.Model;
-import org.nycteascandiaca.prototypes.web.domain.Parameter;
-import org.nycteascandiaca.prototypes.web.repository.ModelRepository;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.context.web.SpringBootServletInitializer;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@ComponentScan("org.nycteascandiaca.prototypes.web")
-public class Application
-{	
+//@ComponentScan("org.nycteascandiaca.prototypes.web")
+public class Application extends SpringBootServletInitializer
+{
+	@Override
+    protected SpringApplicationBuilder configure(SpringApplicationBuilder application)
+	{
+        return application.sources(Application.class);
+    }
+	
 	public static void main(String[] args)
 	{
 		ApplicationContext context = SpringApplication.run(Application.class, args);
 		
-		scanBeans(context);
+		//scanBeans(context);
 		
 		//createModels(context);
 		
 		//modifyModels(context);
 		
-		scanAllModels(context);
+		//scanAllModels(context);
 	}
 	
-	private static void scanBeans(ApplicationContext context)
+	/*private static void scanBeans(ApplicationContext context)
 	{
 		System.out.println("[Begin] Scan beans");
 		String[] beanNames = context.getBeanDefinitionNames();
@@ -41,7 +43,7 @@ public class Application
         }
         System.out.println("[End] Scan beans");
 	}
-
+/*
 	private static void scanAllModels(ApplicationContext context)
 	{
 		ModelManager modelManager = (ModelManager)context.getBean("modelManager");
@@ -116,5 +118,5 @@ public class Application
 		sb.append("\t}\n}");
 
 		return sb.toString();
-	}
+	}*/
 }

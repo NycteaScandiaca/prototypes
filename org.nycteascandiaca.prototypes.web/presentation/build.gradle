@@ -1,12 +1,15 @@
 apply plugin: 'war'
 apply plugin: 'gwt'
+apply plugin: 'spring-boot'
 
 buildscript {
     repositories {
+		mavenCentral()
         jcenter()
     }
     dependencies {
         classpath 'de.richsource.gradle.plugins:gwt-gradle-plugin:0.6'
+        classpath 'org.springframework.boot:spring-boot-gradle-plugin:1.2.7.RELEASE'
     }
 }
 
@@ -14,7 +17,7 @@ dependencies {
 	compile 'com.google.gwt:gwt-user:2.7.0'
     compile 'com.google.gwt:gwt-dev:2.7.0'
     
-    compile 'org.springframework:spring-web:4.2.2.RELEASE'
+    compile 'org.springframework.boot:spring-boot-starter-web'
 }
 
 gwt {
