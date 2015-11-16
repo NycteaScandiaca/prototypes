@@ -9,5 +9,4 @@
 	<entry-point class="org.nycteascandiaca.prototypes.web.presentation.client.Application"/>
 
 	<source path='client'/>
-	<source path='server'/>
 </module>
