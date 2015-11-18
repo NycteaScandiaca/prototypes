@@ -1,0 +1,43 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+        xmlns:gwt="urn:import:com.google.gwt.user.client.ui">
+	
+	<gwt:DockLayoutPanel unit="PX">
+		<!-- Header -->
+		<gwt:north size="50">
+			<gwt:HorizontalPanel styleName="application-header">
+				<!-- Logo -->
+				<gwt:cell horizontalAlignment="ALIGN_LEFT" width="auto">
+					<gwt:HTMLPanel styleName="application-header-text">
+						Application Header
+					</gwt:HTMLPanel>
+				</gwt:cell>
+				<!-- Application Menu -->
+				<gwt:cell horizontalAlignment="ALIGN_CENTER">
+					<gwt:MenuBar ui:field="applicationMenuBar"  styleName="application-menu-bar">
+						<gwt:MenuItem ui:field="modelMenuItem">Model</gwt:MenuItem>
+						<gwt:MenuItemSeparator/>
+						<gwt:MenuItem ui:field="parametersMenuItem">Parameters</gwt:MenuItem>
+						<gwt:MenuItemSeparator/>
+   					</gwt:MenuBar>
+				</gwt:cell>
+			</gwt:HorizontalPanel>
+		</gwt:north>
+		<!-- Content -->
+		<gwt:center>
+			<gwt:SimplePanel ui:field="applicationContent"/>
+		</gwt:center>
+		<!-- Footer -->
+		<gwt:south size="50">
+			<gwt:HorizontalPanel styleName="application-footer">
+				<gwt:cell horizontalAlignment="ALIGN_LEFT" width="auto">
+					<gwt:HTMLPanel styleName="application-footer-text">
+						Application Footer
+					</gwt:HTMLPanel>
+				</gwt:cell>
+			</gwt:HorizontalPanel>
+		</gwt:south>
+		
+	</gwt:DockLayoutPanel>
+	
+</ui:UiBinder>

@@ -15,6 +15,10 @@ apply plugin: 'gwt'
 apply plugin: 'spring-boot'
 
 dependencies {
+	compile project(':domain')
+	compile project(':repository')
+	compile project(':business')
+
 	compile 'com.google.gwt:gwt-user:2.7.0'
     compile 'com.google.gwt:gwt-dev:2.7.0'
     

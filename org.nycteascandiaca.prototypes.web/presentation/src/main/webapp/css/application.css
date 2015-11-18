@@ -1,0 +1,70 @@
+/* Application */
+
+.application-header {
+	height: 50px;
+	width: 100%;
+	background: #0066FF;
+}
+
+.application-footer {
+	height: 50px;
+	width: 100%;
+	background: #0066FF;
+}
+
+.application-header-text {
+	color: white;
+	width: 300;
+	font-size: x-large;
+}
+
+.application-footer-text {
+	color: white;
+	width: 300;
+	font-size: x-large;
+}
+
+.application-menu-bar  {
+	cursor: default;
+	text-align: center;
+}
+.application-menu-bar .gwt-MenuItem {
+	text-align: center;
+	cursor: default;
+	color: white;
+	height: 50px;
+	width: 100px;
+}
+
+.application-menu-bar .gwt-MenuItem-selected {
+	background: #3399FF;
+}
+
+/* Model */
+
+.model-header {
+	height: 80px;
+	width: 100%;
+	background: #0066FF;
+}
+
+.model-title {
+	width: 100%;
+	height: auto;
+	color: white;
+	font-size: x-large;
+}
+
+.model-title-description {
+	width: 100%;
+	height: auto;
+	color: white;
+}
+
+.model-apply-button {
+	color: white;
+	height: 30px;
+	background:  #0066FF;
+	width: 100%;
+	border: 1px solid #0066FF;
+}
