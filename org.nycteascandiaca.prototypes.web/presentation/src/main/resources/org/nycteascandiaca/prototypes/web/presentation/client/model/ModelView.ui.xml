@@ -20,7 +20,7 @@
 					<gwt:VerticalPanel width="100%" spacing="10">
 						<gwt:Label width="100%" height="auto">Model name:</gwt:Label>
 						<gwt:TextBox ui:field="modelNameTextBox" width="100%" height="auto" />
-						<gwt:Button ui:field="applyButton" styleName="model-apply-button">Apply</gwt:Button>
+						<gwt:Button ui:field="applyButton" width="100%" styleName="default-button">Apply</gwt:Button>
 					</gwt:VerticalPanel>
 			    </gwt:Cell>
 			</gwt:VerticalPanel>

@@ -14,7 +14,7 @@
 				</gwt:cell>
 				<!-- Application Menu -->
 				<gwt:cell horizontalAlignment="ALIGN_CENTER">
-					<gwt:MenuBar ui:field="applicationMenuBar"  styleName="application-menu-bar">
+					<gwt:MenuBar ui:field="applicationMenuBar"  styleName="default-menu-bar">
 						<gwt:MenuItem ui:field="modelMenuItem">Model</gwt:MenuItem>
 						<gwt:MenuItemSeparator/>
 						<gwt:MenuItem ui:field="parametersMenuItem">Parameters</gwt:MenuItem>
@@ -25,10 +25,10 @@
 		</gwt:north>
 		<!-- Content -->
 		<gwt:center>
-			<gwt:SimplePanel ui:field="applicationContent"/>
+			<gwt:SimplePanel ui:field="applicationContent" styleName="application-content"/>
 		</gwt:center>
 		<!-- Footer -->
-		<gwt:south size="50">
+		<gwt:south size="40">
 			<gwt:HorizontalPanel styleName="application-footer">
 				<gwt:cell horizontalAlignment="ALIGN_LEFT" width="auto">
 					<gwt:HTMLPanel styleName="application-footer-text">

@@ -1,5 +1,6 @@
 package org.nycteascandiaca.prototypes.web.domain;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Model
@@ -12,7 +13,7 @@ public class Model
 	
 	public Model()
 	{
-		
+		parameters = new ArrayList<Parameter>(0);
 	}
 	
 	public long getId()

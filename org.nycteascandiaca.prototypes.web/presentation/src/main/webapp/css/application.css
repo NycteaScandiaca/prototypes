@@ -1,3 +1,10 @@
+/*
+	Orange: #F7941E
+	Blue: #0066FF
+	Green: #B4D333
+	Red: #ED1C24
+*/
+
 /* Application */
 
 .application-header {
@@ -18,26 +25,14 @@
 	font-size: x-large;
 }
 
+.application-content {
+	background: white;
+}
+
 .application-footer-text {
 	color: white;
 	width: 300;
 	font-size: x-large;
-}
-
-.application-menu-bar  {
-	cursor: default;
-	text-align: center;
-}
-.application-menu-bar .gwt-MenuItem {
-	text-align: center;
-	cursor: default;
-	color: white;
-	height: 50px;
-	width: 100px;
-}
-
-.application-menu-bar .gwt-MenuItem-selected {
-	background: #3399FF;
 }
 
 /* Model */
@@ -67,4 +62,49 @@
 	background:  #0066FF;
 	width: 100%;
 	border: 1px solid #0066FF;
+}
+
+.model-apply-button:hover {
+	background:  #4691FF;
+}
+
+/* Parameters */
+
+.parameters-model-name-label {
+	font-size: x-large;
+}
+
+
+/* General */
+
+.default-menu-bar {
+	cursor: default;
+	text-align: center;
+}
+
+.default-menu-bar .gwt-MenuItem {
+	text-align: center;
+	font-size: medium;
+	cursor: default;
+	color: white;
+	height: 50px;
+	width: 100px;
+}
+
+.default-menu-bar .gwt-MenuItem-selected {
+	background: #4691FF;
+}
+
+.default-button {
+	color: #0066FF;
+	text-align: center;
+	padding: 5px;
+	background: white;
+	font-size: medium;
+	border: 3px solid #0066FF;
+}
+
+.default-button:hover {
+	background: #0066FF;
+	color: white;
 }
