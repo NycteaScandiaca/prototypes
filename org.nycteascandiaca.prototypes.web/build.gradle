@@ -1,4 +1,5 @@
-subprojects {
+subprojects
+{
 	group = 'org.nycteascandiaca.prototypes.web'
 	version = '1.0-SNAPSHOT'
 
@@ -9,23 +10,28 @@ subprojects {
 	sourceCompatibility = 1.8
 	targetCompatibility = 1.8
 
-	eclipse {
-	    classpath {
+	eclipse
+	{
+	    classpath
+	    {
 	         containers.remove('org.eclipse.jdt.launching.JRE_CONTAINER')
 	         containers 'org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8'
 	    }
 
-	    project {
+	    project
+	    {
 	    	natures 'org.eclipse.jdt.core.javanature', 'org.springsource.ide.eclipse.gradle.core.nature'
 	    }
 	}
 
-	repositories {
+	repositories
+	{
    		mavenCentral()
    		mavenLocal()
 	}
 
-	dependencies {
+	dependencies
+	{
     	testCompile 'junit:junit:4+'
  	}
 }

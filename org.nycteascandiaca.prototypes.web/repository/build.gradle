@@ -1,10 +1,15 @@
-dependencies {
+def versionSpringJPA = '1.9.0.RELEASE'
+def versionHibernate = '5.0.1.Final'
+def versionMySQLConnector = '5.1.36'
+
+dependencies
+{
 	compile project(':domain')
 	
-	compile 'org.springframework.data:spring-data-jpa:1.9.0.RELEASE'
+	compile "org.springframework.data:spring-data-jpa:${versionSpringJPA}"
 	
-	compile 'org.hibernate:hibernate-core:5.0.1.Final'
-    compile 'org.hibernate:hibernate-entitymanager:5.0.1.Final'
+	compile "org.hibernate:hibernate-core:${versionHibernate}"
+    compile "org.hibernate:hibernate-entitymanager:${versionHibernate}"
 
-    compile 'mysql:mysql-connector-java:5.1.36'
+    compile "mysql:mysql-connector-java:${versionMySQLConnector}"
 }

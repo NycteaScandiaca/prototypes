@@ -1,0 +1,58 @@
+buildscript
+{
+	def versionSpringBootPlugin = '1.2.7.RELEASE'
+	def versionGWTPlugin = '0.6'
+
+    repositories
+    {
+		mavenCentral()
+		mavenLocal()
+        jcenter()
+    }
+    
+    dependencies
+    {
+    	
+    
+        classpath "de.richsource.gradle.plugins:gwt-gradle-plugin:${versionGWTPlugin}"
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:${versionSpringBootPlugin}"
+    }
+}
+
+apply plugin: 'war'
+apply plugin: 'gwt'
+apply plugin: 'spring-boot'
+
+def versionGWT = '2.7.0'
+def versionValidationAPI = '1.0.0.GA'
+
+dependencies
+{
+	compile project(':domain')
+	compile project(':repository')
+	compile project(':business')
+
+	compile "com.google.gwt:gwt-user:${versionGWT}"
+    compile "com.google.gwt:gwt-dev:${versionGWT}"
+    
+    compile 'org.springframework.boot:spring-boot-starter-web'
+    
+	compile "javax.validation:validation-api:${versionValidationAPI}"
+	compile "javax.validation:validation-api:${versionValidationAPI}-sources"
+}
+
+gwt
+{
+	gwtVersion = "${versionGWT}"
+
+	compiler
+	{
+        enableClosureCompiler = true; // activates -XenableClosureCompiler
+        disableClassMetadata = true; // activates -XdisableClassMetadata
+        disableCastChecking = true; // activates -XdisableCastChecking
+    }
+
+	src += files(project(':domain').sourceSets.main.allJava.srcDirs) + files(project(':domain').sourceSets.main.output.resourcesDir)
+
+	modules 'org.nycteascandiaca.prototypes.web.presentation.Application'
+}

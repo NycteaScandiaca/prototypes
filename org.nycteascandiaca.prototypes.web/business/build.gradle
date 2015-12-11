@@ -1,4 +1,5 @@
-dependencies {
+dependencies
+{
 	compile project(':domain')
 	compile project(':repository')
 }

@@ -1,19 +1,26 @@
-buildscript {
-    repositories {
+buildscript
+{
+	def versionSpringBootPlugin = '1.2.7.RELEASE'
+
+    repositories
+    {
 		mavenCentral()
     }
-    dependencies {
-        classpath 'org.springframework.boot:spring-boot-gradle-plugin:1.2.7.RELEASE'
+    dependencies
+    {    	
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:${versionSpringBootPlugin}"
     }
 }
 
 apply plugin: 'spring-boot'
 
-configurations {
-    compile.exclude module: "spring-boot-starter-tomcat"
+configurations
+{
+    compile.exclude module: 'spring-boot-starter-tomcat'
 }
 
-dependencies {
+dependencies
+{
 	compile project(':domain')
 	compile project(':business')
 	
