@@ -12,8 +12,6 @@ buildscript
     
     dependencies
     {
-    	
-    
         classpath "de.richsource.gradle.plugins:gwt-gradle-plugin:${versionGWTPlugin}"
         classpath "org.springframework.boot:spring-boot-gradle-plugin:${versionSpringBootPlugin}"
     }
@@ -54,5 +52,5 @@ gwt
 
 	src += files(project(':domain').sourceSets.main.allJava.srcDirs) + files(project(':domain').sourceSets.main.output.resourcesDir)
 
-	modules 'org.nycteascandiaca.prototypes.web.presentation.Application'
+	modules 'org.nycteascandiaca.prototypes.web.presentation.gwt.Application'
 }

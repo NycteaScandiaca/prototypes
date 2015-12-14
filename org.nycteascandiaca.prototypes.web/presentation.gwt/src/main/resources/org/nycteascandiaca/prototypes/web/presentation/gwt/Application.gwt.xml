@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module rename-to="Application">
+	<inherits name="com.google.gwt.user.User"/>
+	<inherits name="com.google.gwt.activity.Activity"/>
+	<inherits name="com.google.gwt.place.Place"/>
+	<inherits name="com.google.gwt.user.theme.standard.Standard"/>
+	
+	<inherits name="org.nycteascandiaca.prototypes.web.Domain"/>
+	
+	<replace-with class="org.nycteascandiaca.prototypes.web.presentation.gwt.client.ClientFactoryImpl">
+		<when-type-is class="org.nycteascandiaca.prototypes.web.presentation.gwt.client.ClientFactory"/>
+	</replace-with>
+	
+	<entry-point class="org.nycteascandiaca.prototypes.web.presentation.gwt.client.Application"/>
+
+	<source path="client"/>
+</module>
