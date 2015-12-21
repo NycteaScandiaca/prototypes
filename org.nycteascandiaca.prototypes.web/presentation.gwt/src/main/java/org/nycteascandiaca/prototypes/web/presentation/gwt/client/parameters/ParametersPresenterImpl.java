@@ -11,13 +11,13 @@ import com.google.gwt.event.shared.EventBus;
 import com.google.gwt.place.shared.Place;
 import com.google.gwt.user.client.ui.AcceptsOneWidget;
 
-public class ParametersActivity extends AbstractActivity implements ParametersPresenter
+public class ParametersPresenterImpl extends AbstractActivity implements ParametersPresenter
 {
 	private ClientFactory clientFactory;
 	
 	private ParametersView view;
 
-	public ParametersActivity(ClientFactory clientFactory)
+	public ParametersPresenterImpl(ClientFactory clientFactory)
 	{
 		this.clientFactory = clientFactory;
     }

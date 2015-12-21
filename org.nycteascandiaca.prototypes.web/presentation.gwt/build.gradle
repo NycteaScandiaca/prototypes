@@ -31,6 +31,7 @@ dependencies
 	compile project(':business')
 
 	compile "com.google.gwt:gwt-user:${versionGWT}"
+	compile "com.google.gwt:gwt-servlet:${versionGWT}"
     compile "com.google.gwt:gwt-dev:${versionGWT}"
     
     compile 'org.springframework.boot:spring-boot-starter-web'
@@ -42,9 +43,13 @@ dependencies
 gwt
 {
 	gwtVersion = "${versionGWT}"
+	
+	minHeapSize = "512M";
+    maxHeapSize = "1024M";
 
 	compiler
 	{
+		//strict = true;
         enableClosureCompiler = true; // activates -XenableClosureCompiler
         disableClassMetadata = true; // activates -XdisableClassMetadata
         disableCastChecking = true; // activates -XdisableCastChecking

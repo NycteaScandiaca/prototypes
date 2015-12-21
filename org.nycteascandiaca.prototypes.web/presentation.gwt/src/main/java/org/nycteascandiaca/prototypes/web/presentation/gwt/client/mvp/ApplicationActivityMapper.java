@@ -1,9 +1,9 @@
 package org.nycteascandiaca.prototypes.web.presentation.gwt.client.mvp;
 
 import org.nycteascandiaca.prototypes.web.presentation.gwt.client.ClientFactory;
-import org.nycteascandiaca.prototypes.web.presentation.gwt.client.models.ModelsActivity;
+import org.nycteascandiaca.prototypes.web.presentation.gwt.client.models.ModelsPresenterImpl;
 import org.nycteascandiaca.prototypes.web.presentation.gwt.client.models.ModelsPlace;
-import org.nycteascandiaca.prototypes.web.presentation.gwt.client.parameters.ParametersActivity;
+import org.nycteascandiaca.prototypes.web.presentation.gwt.client.parameters.ParametersPresenterImpl;
 import org.nycteascandiaca.prototypes.web.presentation.gwt.client.parameters.ParametersPlace;
 
 import com.google.gwt.activity.shared.Activity;
@@ -24,11 +24,11 @@ public class ApplicationActivityMapper implements ActivityMapper
 	{
 		if (place instanceof ModelsPlace)
 		{
-			return new ModelsActivity(clientFactory);
+			return new ModelsPresenterImpl(clientFactory);
 		}
 		else if (place instanceof ParametersPlace)
 		{
-			return new ParametersActivity(clientFactory);
+			return new ParametersPresenterImpl(clientFactory);
 		}
 		return null;
 	}
