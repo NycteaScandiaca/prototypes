@@ -22,6 +22,7 @@ apply plugin: 'gwt'
 apply plugin: 'spring-boot'
 
 def versionGWT = '2.7.0'
+def versionRestyGWT = '2.1.1'
 def versionValidationAPI = '1.0.0.GA'
 
 dependencies
@@ -30,6 +31,7 @@ dependencies
 	compile project(':repository')
 	compile project(':business')
 
+	compile "org.fusesource.restygwt:restygwt:${versionRestyGWT}"
 	compile "com.google.gwt:gwt-user:${versionGWT}"
 	compile "com.google.gwt:gwt-servlet:${versionGWT}"
     compile "com.google.gwt:gwt-dev:${versionGWT}"

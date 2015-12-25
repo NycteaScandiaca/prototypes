@@ -24,11 +24,11 @@ public class ApplicationActivityMapper implements ActivityMapper
 	{
 		if (place instanceof ModelsPlace)
 		{
-			return new ModelsPresenterImpl(clientFactory);
+			return new ModelsPresenterImpl((ModelsPlace)place, clientFactory);
 		}
 		else if (place instanceof ParametersPlace)
 		{
-			return new ParametersPresenterImpl(clientFactory);
+			return new ParametersPresenterImpl((ParametersPlace)place, clientFactory);
 		}
 		return null;
 	}

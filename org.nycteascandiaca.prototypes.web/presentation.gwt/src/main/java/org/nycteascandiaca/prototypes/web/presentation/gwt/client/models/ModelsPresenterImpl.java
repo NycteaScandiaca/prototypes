@@ -8,27 +8,25 @@ import org.nycteascandiaca.prototypes.web.presentation.gwt.client.ClientFactory;
 import org.nycteascandiaca.prototypes.web.presentation.gwt.client.HistoryToken;
 
 import com.google.gwt.activity.shared.AbstractActivity;
-import com.google.gwt.core.client.JsArray;
-import com.google.gwt.core.client.JsonUtils;
 import com.google.gwt.event.shared.EventBus;
-import com.google.gwt.http.client.Request;
-import com.google.gwt.http.client.RequestBuilder;
-import com.google.gwt.http.client.RequestCallback;
-import com.google.gwt.http.client.RequestException;
-import com.google.gwt.http.client.Response;
+import com.google.gwt.jsonp.client.JsonpRequestBuilder;
 import com.google.gwt.place.shared.Place;
 import com.google.gwt.user.client.History;
 import com.google.gwt.user.client.Window;
+import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.AcceptsOneWidget;
 
 public class ModelsPresenterImpl extends AbstractActivity implements ModelsPresenter
 {
-	private ClientFactory clientFactory;
+	private final ModelsPlace place;
+	
+	private final ClientFactory clientFactory;
 	
 	private ModelsView view;
 
-	public ModelsPresenterImpl(ClientFactory clientFactory)
+	public ModelsPresenterImpl(ModelsPlace place, ClientFactory clientFactory)
 	{
+		this.place = place;
 		this.clientFactory = clientFactory;
     }
 
@@ -39,10 +37,17 @@ public class ModelsPresenterImpl extends AbstractActivity implements ModelsPrese
 		view.setPresenter(this);
 		container.setWidget(view.asWidget());
 		
-		RequestBuilder builder = new RequestBuilder(RequestBuilder.GET, "http://localhost:9002/models");
+		loadData();
+	}
+	
+	private void loadData()
+	{
+			
+		
+		/*RequestBuilder builder = new RequestBuilder(RequestBuilder.GET, "http://localhost:9002/models");
 		try
 		{
-			Request request = builder.sendRequest(null, new RequestCallback()
+			builder.sendRequest(null, new RequestCallback()
 			{
 				public void onError(Request request, Throwable exception)
 				{
@@ -66,9 +71,9 @@ public class ModelsPresenterImpl extends AbstractActivity implements ModelsPrese
 		catch (RequestException e)
 		{
 			Window.alert("Couldn't retrieve JSON");
-		}
+		}*/
 	}
-	
+
 	@Override
 	public void onStop() {
 		view = null;
@@ -97,7 +102,7 @@ public class ModelsPresenterImpl extends AbstractActivity implements ModelsPrese
 			sb.append("model=");
 			sb.append(model.getId());
 			
-			History.newItem(HistoryToken.PARAMETERS.getToken() + sb.toString(), false);
+			History.newItem(HistoryToken.PARAMETERS.getToken() + sb.toString());
 		}
 	}
 
